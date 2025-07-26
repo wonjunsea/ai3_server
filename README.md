@@ -12,3 +12,9 @@ pip install -r requirements.txt
 python3 server.py
 ```
 - 서버 정상 작동합니다
+
+```cmd
+CLOVA_API_KEY=your-api-key-here
+```
+
+- .env파일 생성하시고 위 내용 추가해주세요
