@@ -5,13 +5,15 @@ from dotenv import load_dotenv
 import os
 import time
 
+# .env 로드
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
+
+# CORS 명시적으로 설정
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 CLOVA_API_KEY = os.getenv("CLOVA_API_KEY")
-# print(f"Loaded CLOVA_API_KEY: {CLOVA_API_KEY}") 무서워요..
 
 @app.route("/api/clova-summary", methods=["POST"])
 def clova_summary():
@@ -38,6 +40,7 @@ def clova_summary():
             ),
             500,
         )
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 4000))
     app.run(host="0.0.0.0", port=port)
