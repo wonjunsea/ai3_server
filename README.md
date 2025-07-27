@@ -1,4 +1,7 @@
 ```cmd
+ python -m venv venv
+ -먼저 venv 만들어야 됩니다.
+```cmd
 source venv/bin/activate
 ```
 - 명령어 입력해서 venv 가상환경 접속하시고
